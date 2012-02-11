@@ -9,6 +9,7 @@
    #:*gap-buffer-growth*                ; Variable
 
    #:gap-buffer                         ; Type
+   #:gap-buffer-p                       ; Predicate
    
    #:make-gap-buffer                    ; Function
    #:gap-buffer-components
