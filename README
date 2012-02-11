@@ -1,0 +1,63 @@
+#+TITLE: The =CL-GAP-BUFFER= Library
+#+AUTHOR: Robert Smith
+#+EMAIL: quad@symbo1ics.com
+
+* Summary
+
+A small library for efficient-local-insertion strings represented as
+gap buffers. It operates efficiently for cursor-based editing.
+
+
+* Usage
+
+The principle use follows. Mutable operations' output is elided.
+
+Create a gap buffer.
+
+    : > (defparameter buf (make-gap-buffer))
+
+Add some data to it.
+
+    : > (gap-buffer-insert-string buf "hello")
+    : > (gap-buffer-string buf)
+    : "hello"
+    : > (gap-buffer-insert-char buf #\a)
+    : > (gap-buffer-string buf)
+    : "helloa"
+
+Move about in the gap buffer.
+
+    : > (gap-buffer-move-left buf)
+    : > (gap-buffer-move-left buf)
+    : > (gap-buffer-insert-char buf #\y)
+    : > (gap-buffer-string buf)
+    : "hellyoa"
+
+Remove characters.
+
+    : > (gap-buffer-move-right buf)
+    : > (gap-buffer-backspace buf)
+    : > (gap-buffer-string buf)
+    : "hellya"
+    : > (gap-buffer-insert-char buf #\e)
+    : > (gap-buffer-string buf)
+    : "hellyea"
+    : > (gap-buffer-delete buf)
+    : > (gap-buffer-string buf)
+    : "hellye"
+    : > (gap-buffer-insert-char buf #\s)
+    : > (gap-buffer-string buf)
+    : "hellyes"
+
+
+* Dependencies
+
+None.
+
+
+* License
+
+See the file ~LICENSE~.
+
+----------
+### End of file
