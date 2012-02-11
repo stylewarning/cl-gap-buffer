@@ -12,8 +12,8 @@
    #:gap-buffer-p                       ; Predicate
    
    #:make-gap-buffer                    ; Function
-   #:gap-buffer-components
-   #:gap-buffer-clear                   ; ...
+   #:gap-buffer-components              ; ...
+   #:gap-buffer-clear
    #:gap-buffer-length
    #:gap-buffer-string
    #:gap-buffer-insert-char
